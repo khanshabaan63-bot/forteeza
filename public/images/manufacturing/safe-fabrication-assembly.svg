@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#F1F3F2" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <!-- Clean White Background -->
+  <rect width="800" height="500" fill="#FFFFFF" />
+  <rect width="800" height="500" fill="url(#grid)" />
+  
+  <!-- Architectural Safe Blueprint Graphic -->
+  <g transform="translate(180, 45)" stroke="#445E43" stroke-width="2" fill="none">
+    <!-- Outer Safe Frame -->
+    <rect x="30" y="20" width="380" height="260" rx="8" stroke="#364A35" stroke-width="2.5" fill="#FAFAF8" />
+    <rect x="50" y="40" width="340" height="220" rx="6" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="6 6" />
+    
+    <!-- Door Dial & Bolt Mechanism Blueprint -->
+    <circle cx="220" cy="150" r="52" stroke="#577756" stroke-width="2" fill="#FFFFFF" />
+    <circle cx="220" cy="150" r="24" stroke="#364A35" stroke-width="2.5" fill="#E5EBE5" />
+    <circle cx="220" cy="150" r="8" fill="#364A35" />
+    
+    <!-- Left Horizontal Locking Bolts -->
+    <line x1="80" y1="110" x2="160" y2="110" stroke="#445E43" stroke-width="4" stroke-linecap="round" />
+    <line x1="80" y1="150" x2="160" y2="150" stroke="#445E43" stroke-width="4" stroke-linecap="round" />
+    <line x1="80" y1="190" x2="160" y2="190" stroke="#445E43" stroke-width="4" stroke-linecap="round" />
+    
+    <!-- Right Horizontal Locking Bolts -->
+    <line x1="280" y1="110" x2="360" y2="110" stroke="#445E43" stroke-width="4" stroke-linecap="round" />
+    <line x1="280" y1="150" x2="360" y2="150" stroke="#445E43" stroke-width="4" stroke-linecap="round" />
+    <line x1="280" y1="190" x2="360" y2="190" stroke="#445E43" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- Editorial Card Bottom on Clean White Card -->
+  <rect x="40" y="340" width="720" height="110" rx="8" fill="#F8F9F8" stroke="#E5E7EB" stroke-width="1" />
+  
+  <!-- Step Badge -->
+  <rect x="60" y="360" width="85" height="24" rx="4" fill="#364A35" />
+  <text x="102" y="376" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">STAGE 02</text>
+  
+  <text x="60" y="412" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#1F2937">Safe Fabrication & Structural Assembly</text>
+  <text x="60" y="434" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#4B5563">Multi-layer steel body construction, seam welding, and reinforced barrier filling</text>
+  
+  <!-- Workshop Tag -->
+  <rect x="580" y="378" width="160" height="34" rx="4" fill="#E5EBE5" stroke="#CBD7CB" stroke-width="1" />
+  <text x="660" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#364A35" text-anchor="middle">WORKSHOP PROCESS</text>
+</svg>
