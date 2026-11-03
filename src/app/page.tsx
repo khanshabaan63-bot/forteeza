@@ -24,6 +24,7 @@ import { projectsData } from "@/data/projects";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
+import HeroSection from "@/components/HeroSection";
 
 export default function HomePage() {
   const featuredProducts = products.filter((p) => p.isFeatured).slice(0, 6);
@@ -87,105 +88,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* 1. HERO SECTION */}
-      <section className="relative bg-canvas overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 border-b border-border-subtle">
-        {/* Subtle background industrial grid pattern */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#1A1D1A_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            {/* Left Column: Typography & CTAs */}
-            <div className="lg:col-span-7 flex flex-col items-start">
-              {/* Eyebrow Pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-olive-100/90 border border-olive-200 text-olive-900 text-xs font-bold uppercase tracking-wider mb-5">
-                <ShieldCheck className="w-4 h-4 text-olive-700" />
-                <span>Commercial Security & Safe Manufacturing</span>
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-charcoal-900 tracking-tight leading-[1.1]">
-                Advanced Security. <br />
-                <span className="text-olive-700">Built on Trust.</span>
-              </h1>
-
-              {/* Supporting Headline */}
-              <p className="mt-4 font-heading font-semibold text-lg sm:text-xl text-charcoal-800">
-                Safes, Lockers and Security Solutions for Businesses.
-              </p>
-
-              {/* Description */}
-              <p className="mt-4 text-sm sm:text-base text-charcoal-600 max-w-xl leading-relaxed">
-                Forteeza Safe Company provides safe and security solutions for jewellery showrooms, commercial establishments, offices, and businesses seeking dependable protection for their valuable assets.
-              </p>
-
-              {/* Hero Action Buttons */}
-              <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
-                <Link
-                  href="/products"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded bg-charcoal-900 hover:bg-charcoal-950 text-white font-heading font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-soft hover:shadow-soft-lg group"
-                >
-                  <span>EXPLORE OUR PRODUCTS</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-
-                <WhatsAppButton
-                  message="Hello Forteeza Safe Company, I would like to know more about your safes and security products."
-                  size="lg"
-                  variant="primary"
-                  className="text-xs sm:text-sm tracking-wider uppercase font-bold"
-                >
-                  <span>ENQUIRE ON WHATSAPP</span>
-                </WhatsAppButton>
-              </div>
-
-              {/* Trust Subtext */}
-              <div className="mt-8 pt-6 border-t border-border-subtle flex items-center gap-4 text-xs text-charcoal-500">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  <span>Direct Factory Quotes</span>
-                </div>
-                <span>•</span>
-                <div>50+ Years Industry Knowledge</div>
-                <span>•</span>
-                <div>North India Regional Supply</div>
-              </div>
-            </div>
-
-            {/* Right Column: Hero Safe Visual */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto max-w-md lg:max-w-none">
-                {/* Visual Backdrop Frame */}
-                <div className="relative rounded-2xl bg-gradient-to-b from-canvas-subtle to-canvas-muted p-4 sm:p-6 border border-border shadow-soft-lg">
-                  {/* Subtle Badge */}
-                  <div className="absolute -top-3 right-6 bg-olive-700 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded shadow-sm">
-                    Flagship Commercial Safe
-                  </div>
-
-                  <div className="relative h-80 sm:h-96 md:h-[420px] w-full flex items-center justify-center overflow-hidden rounded-lg bg-[#141A14]">
-                    <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#CBD7CB_1px,transparent_1px)] [background-size:20px_20px]" />
-                    <Image
-                      src="/images/hero/hero-safe.png"
-                      alt="Forteeza Safe Company - High Security Commercial Double Door Safe"
-                      fill
-                      className="object-contain p-4 drop-shadow-2xl transition-transform duration-700 hover:scale-105"
-                      priority
-                    />
-                  </div>
-
-                  {/* Caption underneath */}
-                  <div className="mt-4 flex items-center justify-between text-xs text-charcoal-600">
-                    <span className="font-semibold text-charcoal-800">
-                      Double Door Defender Series
-                    </span>
-                    <span className="text-[11px] text-olive-700 font-medium">
-                      Multi-Bolt Protection
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* 2. TRUST STRIP */}
       <section className="bg-canvas-subtle border-b border-border py-8 sm:py-10">

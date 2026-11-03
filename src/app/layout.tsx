@@ -1,25 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { OrganizationSchema, WebSiteSchema } from "@/components/SchemaOrg";
 import { siteConfig } from "@/config/site";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   themeColor: "#364A35",
@@ -96,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
+    <html lang="en">
       <body className="min-h-screen flex flex-col font-sans bg-canvas text-charcoal-900 antialiased selection:bg-olive-200 selection:text-charcoal-950">
         <OrganizationSchema />
         <WebSiteSchema />
