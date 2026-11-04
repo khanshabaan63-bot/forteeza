@@ -51,25 +51,20 @@ export default function Navbar() {
           {/* Brand Logo & Wordmark */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-olive-600 rounded"
-            aria-label="Forteeza Safe Company - Home"
+            className="flex flex-col items-start group focus:outline-none focus:ring-2 focus:ring-olive-600 rounded py-0.5"
+            aria-label="Forteeza Safe & Vaults Company - Home"
           >
-            <div className="relative h-10 w-28 sm:h-11 sm:w-36 flex items-center">
+            <span className="font-heading font-extrabold text-sm sm:text-base md:text-lg tracking-tight text-charcoal-900 uppercase leading-none">
+              Forteeza Safe & Vaults Company
+            </span>
+            <div className="relative h-6 w-24 sm:h-7 sm:w-28 mt-1">
               <Image
                 src="/images/logo/logo.png"
-                alt="Forteeza Safe Company Logo"
+                alt="Rakshak Logo - With 50+ years of expertise"
                 fill
                 className="object-contain object-left"
                 priority
               />
-            </div>
-            <div className="hidden min-[420px]:flex flex-col border-l border-border pl-3">
-              <span className="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-charcoal-900 uppercase">
-                Forteeza
-              </span>
-              <span className="text-[10px] uppercase tracking-wider text-olive-700 font-semibold -mt-0.5">
-                Safe Company
-              </span>
             </div>
           </Link>
 
@@ -149,13 +144,18 @@ export default function Navbar() {
             <div>
               {/* Header inside drawer */}
               <div className="flex items-center justify-between pb-5 border-b border-border">
-                <div className="flex flex-col">
-                  <span className="font-heading font-extrabold text-sm tracking-widest text-charcoal-900 uppercase">
-                    Forteeza
+                <div className="flex flex-col items-start pr-2">
+                  <span className="font-heading font-extrabold text-xs sm:text-sm tracking-tight text-charcoal-900 uppercase leading-tight">
+                    Forteeza Safe & Vaults Company
                   </span>
-                  <span className="text-[10px] uppercase tracking-wider text-olive-700 font-semibold">
-                    Safe Company
-                  </span>
+                  <div className="relative h-6 w-24 mt-1">
+                    <Image
+                      src="/images/logo/logo.png"
+                      alt="Rakshak Logo"
+                      fill
+                      className="object-contain object-left"
+                    />
+                  </div>
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}

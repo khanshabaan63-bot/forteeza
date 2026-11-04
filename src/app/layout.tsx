@@ -30,8 +30,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "Forteeza Safe Company | Heavy Commercial Safes & Security Solutions",
-    template: "%s | Forteeza Safe Company",
+    default: "Forteeza Safe & Vaults Company | Heavy Commercial Safes & Security Solutions",
+    template: "%s | Forteeza Safe & Vaults Company",
   },
   description:
     "Forteeza Safe Company manufactures heavy-duty safes, tijoris, lockers, and strong-room doors backed by over 50 years of team industry experience.",

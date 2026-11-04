@@ -37,11 +37,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block">
-              <div className="relative h-10 w-36 bg-canvas-subtle/10 p-1 rounded">
+            <Link href="/" className="inline-flex flex-col items-start group">
+              <span className="font-heading font-extrabold text-sm sm:text-base tracking-tight text-white uppercase leading-tight">
+                Forteeza Safe & Vaults Company
+              </span>
+              <div className="relative h-7 w-28 sm:h-8 sm:w-32 mt-1.5 bg-canvas-subtle/10 p-0.5 rounded">
                 <Image
                   src="/images/logo/logo.png"
-                  alt="Forteeza Safe Company"
+                  alt="Rakshak Logo"
                   fill
                   className="object-contain object-left brightness-200 invert"
                 />

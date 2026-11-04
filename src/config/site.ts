@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Forteeza Safe Company",
+  name: "Forteeza Safe & Vaults Company",
   tagline: "Advanced Security. Built on Trust.",
   shortDescription: "Manufacturer of heavy-duty safes, tijoris, lockers, strong-room doors, and commercial security solutions.",
   fullDescription: "Forteeza Safe Company provides engineered safe and security solutions for jewellery showrooms, commercial establishments, financial institutions, offices, and industrial premises seeking dependable protection.",

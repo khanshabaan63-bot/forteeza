@@ -96,45 +96,24 @@ export default function HomePage() {
             {/* Left Column: Typography & CTAs */}
             <div className="lg:col-span-7 flex flex-col items-start">
               {/* Eyebrow Pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-olive-100/90 border border-olive-200 text-olive-900 text-xs font-bold uppercase tracking-wider mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-olive-100/90 border border-olive-200 text-olive-900 text-xs font-bold uppercase tracking-wider mb-5">
                 <ShieldCheck className="w-4 h-4 text-olive-700" />
                 <span>Commercial Security & Safe Manufacturing</span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-charcoal-900 tracking-tight leading-[1.15]">
-                Forteeza Safe & <br className="hidden sm:inline" />
-                <span className="text-olive-700">Vaults Company</span>
+              <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-charcoal-900 tracking-tight leading-[1.1]">
+                Advanced Security. <br />
+                <span className="text-olive-700">Built on Trust.</span>
               </h1>
-
-              {/* Rakshak Logo Section */}
-              <div className="mt-4 mb-2 flex flex-wrap items-center gap-3.5">
-                <div className="relative h-12 sm:h-14 w-44 sm:w-52 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-border shadow-soft-sm flex items-center justify-center">
-                  <Image
-                    src="/images/logo/rakshak-logo.png"
-                    alt="Rakshak - With 50+ years of expertise"
-                    fill
-                    className="object-contain p-1"
-                    priority
-                  />
-                </div>
-                <div className="border-l border-border pl-3 text-xs text-charcoal-600 leading-snug">
-                  <span className="font-bold text-charcoal-900 block text-xs sm:text-sm">
-                    50+ Years of Manufacturing Expertise
-                  </span>
-                  <span className="text-olive-800 font-medium">
-                    Industry-Grade Security & Vault Craftsmanship
-                  </span>
-                </div>
-              </div>
 
               {/* Supporting Headline */}
               <p className="mt-4 font-heading font-semibold text-lg sm:text-xl text-charcoal-800">
-                Advanced Security. Built on Trust — Safes, Lockers & Vault Solutions.
+                Safes, Lockers and Security Solutions for Businesses.
               </p>
 
               {/* Description */}
-              <p className="mt-3 text-sm sm:text-base text-charcoal-600 max-w-xl leading-relaxed">
+              <p className="mt-4 text-sm sm:text-base text-charcoal-600 max-w-xl leading-relaxed">
                 Forteeza Safe & Vaults Company provides safe and security solutions for jewellery showrooms, commercial establishments, offices, and businesses seeking dependable protection for their valuable assets.
               </p>
 
