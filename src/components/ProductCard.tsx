@@ -16,6 +16,7 @@ interface ProductCardProps {
 export default function ProductCard({ product, priority = false }: ProductCardProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const primaryImage = product.images[0] || "/images/products/double-door-defender-safe.png";
+  const isDarkBg = primaryImage.includes("counter-safe");
 
   const whatsappMessage = `Hello Forteeza Safe Company, I am interested in ${product.name}. Please share product details and quotation.`;
 
@@ -24,7 +25,9 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       <article className="group flex flex-col bg-canvas rounded-lg border border-border overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-olive-400">
         {/* Clickable Image Showcase */}
         <div
-          className="relative h-64 sm:h-72 w-full bg-[#181E17] overflow-hidden cursor-zoom-in flex items-center justify-center p-4"
+          className={`relative h-64 sm:h-72 w-full overflow-hidden cursor-zoom-in flex items-center justify-center p-5 ${
+            isDarkBg ? "bg-black" : "bg-white border-b border-border-subtle"
+          }`}
           onClick={() => setLightboxOpen(true)}
           role="button"
           tabIndex={0}
@@ -37,11 +40,23 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           aria-label={`View enlarged image of ${product.name}`}
         >
           {/* Subtle grid pattern background */}
-          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#CBD7CB_1px,transparent_1px)] [background-size:16px_16px]" />
+          <div
+            className={`absolute inset-0 opacity-15 [background-size:16px_16px] ${
+              isDarkBg
+                ? "bg-[radial-gradient(#CBD7CB_1px,transparent_1px)]"
+                : "bg-[radial-gradient(#1A1D1A_1px,transparent_1px)] opacity-[0.04]"
+            }`}
+          />
 
           {/* Product Category Tag */}
           <div className="absolute top-3 left-3 z-10">
-            <span className="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded bg-olive-900/80 backdrop-blur-md text-olive-100 border border-olive-700/50">
+            <span
+              className={`text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded backdrop-blur-md border ${
+                isDarkBg
+                  ? "bg-olive-900/90 text-olive-100 border-olive-700/50"
+                  : "bg-charcoal-900/90 text-white border-charcoal-700/50"
+              }`}
+            >
               {product.category}
             </span>
           </div>
@@ -57,14 +72,20 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
               src={primaryImage}
               alt={product.name}
               fill
-              className="object-contain drop-shadow-lg"
+              className="object-contain"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               priority={priority}
             />
           </div>
 
           <div className="absolute bottom-2 text-center w-full opacity-0 group-hover:opacity-90 transition-opacity duration-200">
-            <span className="text-[10px] text-olive-200 bg-black/60 px-2 py-0.5 rounded">
+            <span
+              className={`text-[10px] px-2.5 py-0.5 rounded ${
+                isDarkBg
+                  ? "text-olive-200 bg-black/70"
+                  : "text-charcoal-700 bg-canvas/90 border border-border shadow-xs"
+              }`}
+            >
               Click image to inspect details
             </span>
           </div>

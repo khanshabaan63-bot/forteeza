@@ -48,6 +48,11 @@ export default function ImageLightbox({
 
   if (!isOpen) return null;
 
+  const isDark =
+    imageSrc.includes("counter-safe") ||
+    imageSrc.includes("manufacturing") ||
+    imageSrc.includes(".svg");
+
   return (
     <div
       role="dialog"
@@ -84,7 +89,11 @@ export default function ImageLightbox({
         </div>
 
         {/* Image Display Area */}
-        <div className="relative flex-1 min-h-[300px] sm:min-h-[420px] max-h-[65vh] bg-[#121612] flex items-center justify-center p-4">
+        <div
+          className={`relative flex-1 min-h-[300px] sm:min-h-[420px] max-h-[65vh] flex items-center justify-center p-6 ${
+            isDark ? "bg-black" : "bg-white"
+          }`}
+        >
           <div className="relative w-full h-full flex items-center justify-center">
             {/* If SVG or PNG */}
             <Image

@@ -63,45 +63,59 @@ export default function ProjectsPage() {
 
           {/* Project Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((proj) => (
-              <div
-                key={proj.id}
-                className="group flex flex-col bg-canvas-subtle rounded-xl border border-border overflow-hidden hover:shadow-card-hover hover:border-olive-500 transition-all duration-300"
-              >
-                {/* Clickable Image Box */}
+            {filteredProjects.map((proj) => {
+              const isDark = proj.imageSrc.includes("counter-safe");
+              return (
                 <div
-                  className="relative h-64 w-full bg-charcoal-950 flex items-center justify-center p-4 cursor-zoom-in overflow-hidden"
-                  onClick={() => setActiveProject(proj)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      setActiveProject(proj);
-                    }
-                  }}
-                  aria-label={`View enlarged photo of ${proj.title}`}
+                  key={proj.id}
+                  className="group flex flex-col bg-canvas-subtle rounded-xl border border-border overflow-hidden hover:shadow-card-hover hover:border-olive-500 transition-all duration-300"
                 >
-                  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#CBD7CB_1px,transparent_1px)] [background-size:16px_16px]" />
-                  <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
-                    <Image
-                      src={proj.imageSrc}
-                      alt={proj.title}
-                      fill
-                      className="object-contain"
+                  {/* Clickable Image Box */}
+                  <div
+                    className={`relative h-64 w-full flex items-center justify-center p-4 cursor-zoom-in overflow-hidden ${
+                      isDark ? "bg-black" : "bg-white border-b border-border-subtle"
+                    }`}
+                    onClick={() => setActiveProject(proj)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setActiveProject(proj);
+                      }
+                    }}
+                    aria-label={`View enlarged photo of ${proj.title}`}
+                  >
+                    <div
+                      className={`absolute inset-0 [background-size:16px_16px] ${
+                        isDark
+                          ? "opacity-20 bg-[radial-gradient(#CBD7CB_1px,transparent_1px)]"
+                          : "opacity-[0.03] bg-[radial-gradient(#1A1D1A_1px,transparent_1px)]"
+                      }`}
                     />
+                    <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
+                      <Image
+                        src={proj.imageSrc}
+                        alt={proj.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="absolute top-3 left-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-olive-900/90 text-olive-100 border border-olive-700">
+                        {proj.category}
+                      </span>
+                    </div>
+                    <div className="absolute bottom-2 text-center w-full opacity-0 group-hover:opacity-90 transition-opacity">
+                      <span
+                        className={`text-[10px] px-2.5 py-0.5 rounded font-mono ${
+                          isDark ? "text-olive-200 bg-black/60" : "text-charcoal-700 bg-canvas/90 border border-border"
+                        }`}
+                      >
+                        Click image to inspect
+                      </span>
+                    </div>
                   </div>
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-olive-900/90 text-olive-100 border border-olive-700">
-                      {proj.category}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-2 text-center w-full opacity-0 group-hover:opacity-90 transition-opacity">
-                    <span className="text-[10px] text-olive-200 bg-black/60 px-2 py-0.5 rounded font-mono">
-                      Click image to inspect
-                    </span>
-                  </div>
-                </div>
 
                 {/* Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
@@ -150,8 +164,9 @@ export default function ProjectsPage() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
+        </div>
 
           {/* Privacy Note */}
           <div className="mt-14 p-4 rounded-lg bg-olive-50 border border-olive-200 text-xs text-charcoal-700 flex items-start gap-3">

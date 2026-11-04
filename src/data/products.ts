@@ -53,7 +53,7 @@ export const products: Product[] = [
     detailedDescription: "The Double Door Defender Safe represents the pinnacle of commercial physical asset protection. Fabricated with a reinforced multi-bend steel casing and interlocking double door structure, this safe offers generous storage volume combined with formidable mechanical defense. Equipped with multi-directional steel shooting bolts, dual locking mechanisms, and customizable interior shelves or independent internal lockable drawers.",
     images: [
       "/images/products/double-door-defender-safe.png",
-      "/images/hero/hero-safe.png"
+      "/images/products/double-door-fireproof-safe.png"
     ],
     features: [
       "Twin door design facilitating structured inventory access for multiple department managers",
@@ -391,8 +391,8 @@ export const products: Product[] = [
     shortDescription: "Heavy-duty outdoor and forecourt cash management safe designed for fuel stations and 24-hour retail operations.",
     detailedDescription: "Engineered specifically to handle day and night cash collections at petrol stations, toll booths, and 24/7 retail points. Allows shift attendants to deposit cash collections directly without giving anyone on the shift access to accumulated funds.",
     images: [
-      "/images/products/petrol-pump-safe.png",
-      "/images/products/counter-safe.png"
+      "/images/products/counter-safe.png",
+      "/images/products/single-door-defender-safe.png"
     ],
     features: [
       "Rugged heavy-gauge body built to withstand rigorous continuous commercial usage",
@@ -438,7 +438,7 @@ export const products: Product[] = [
     detailedDescription: "Forteeza manufactures heavy-duty strong-room doors designed to secure entire vault chambers and concrete secure rooms. Fabricated with thick monolithic steel barrier plates, composite infill, hardened lock shields, and multi-directional shooting boltwork driven by a balanced operating wheel. Includes an inner emergency grille gate (day gate) for ventilation and daytime security inspection.",
     images: [
       "/images/products/strong-room-door-vault.png",
-      "/images/hero/hero-safe.png"
+      "/images/products/double-door-defender-safe.png"
     ],
     features: [
       "Multi-layered steel barrier plate engineered against oxy-acetylene torch, drilling, and mechanical attack",

@@ -170,13 +170,13 @@ export default function HomePage() {
                     Flagship Commercial Safe
                   </div>
 
-                  <div className="relative h-80 sm:h-96 md:h-[420px] w-full flex items-center justify-center overflow-hidden rounded-lg bg-[#141A14]">
-                    <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#CBD7CB_1px,transparent_1px)] [background-size:20px_20px]" />
+                  <div className="relative h-80 sm:h-96 md:h-[420px] w-full flex items-center justify-center overflow-hidden rounded-lg bg-white border border-border-subtle p-4">
+                    <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#1A1D1A_1px,transparent_1px)] [background-size:16px_16px]" />
                     <Image
-                      src="/images/hero/hero-safe.png"
-                      alt="Forteeza Safe Company - High Security Commercial Double Door Safe"
+                      src="/images/products/double-door-defender-safe.png"
+                      alt="Forteeza Safe & Vaults Company - High Security Commercial Double Door Safe"
                       fill
-                      className="object-contain p-4 drop-shadow-2xl transition-transform duration-700 hover:scale-105"
+                      className="object-contain p-2 transition-transform duration-700 hover:scale-105"
                       priority
                     />
                   </div>
@@ -478,24 +478,30 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {projectsData.slice(0, 3).map((proj) => (
-              <div
-                key={proj.id}
-                className="flex flex-col bg-canvas-subtle rounded-lg border border-border overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-olive-400"
-              >
-                <div className="relative h-52 bg-charcoal-950 flex items-center justify-center p-4">
-                  <Image
-                    src={proj.imageSrc}
-                    alt={proj.title}
-                    fill
-                    className="object-contain"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-olive-900 text-olive-100 border border-olive-700">
-                      {proj.category}
-                    </span>
+            {projectsData.slice(0, 3).map((proj) => {
+              const isDark = proj.imageSrc.includes("counter-safe");
+              return (
+                <div
+                  key={proj.id}
+                  className="flex flex-col bg-canvas-subtle rounded-lg border border-border overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-olive-400"
+                >
+                  <div
+                    className={`relative h-52 flex items-center justify-center p-4 ${
+                      isDark ? "bg-black" : "bg-white border-b border-border-subtle"
+                    }`}
+                  >
+                    <Image
+                      src={proj.imageSrc}
+                      alt={proj.title}
+                      fill
+                      className="object-contain"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-olive-900 text-olive-100 border border-olive-700">
+                        {proj.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
                 <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
@@ -522,8 +528,9 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
+        </div>
         </div>
       </section>
 
