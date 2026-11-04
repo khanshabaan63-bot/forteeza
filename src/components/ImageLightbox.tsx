@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useCallback, useState } from "react";
-import { X, Info, AlertCircle } from "lucide-react";
+import React, { useEffect, useCallback } from "react";
+import { X, Info, ZoomIn } from "lucide-react";
 
 interface ImageLightboxProps {
   isOpen: boolean;
@@ -22,17 +22,6 @@ export default function ImageLightbox({
   description,
   badge,
 }: ImageLightboxProps) {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  // Reset loading & error state when imageSrc or isOpen changes
-  useEffect(() => {
-    if (isOpen) {
-      setLoading(true);
-      setError(false);
-    }
-  }, [imageSrc, isOpen]);
-
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -63,77 +52,62 @@ export default function ImageLightbox({
       role="dialog"
       aria-modal="true"
       aria-label={title || "Image Viewer"}
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-10 bg-charcoal-950/85 backdrop-blur-sm transition-opacity animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-charcoal-950/80 backdrop-blur-md transition-opacity animate-fade-in"
       onClick={onClose}
     >
       {/* Lightbox Modal Container */}
       <div
-        className="relative max-w-5xl w-full flex flex-col bg-canvas rounded-lg overflow-hidden shadow-2xl border border-border"
+        className="relative max-w-5xl w-full max-h-[92vh] flex flex-col bg-canvas rounded-xl overflow-hidden shadow-2xl border border-border"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Lightbox Header Bar */}
         <div className="flex items-center justify-between px-5 py-3.5 bg-canvas-subtle border-b border-border">
           <div className="flex items-center gap-2.5">
             {badge && (
-              <span className="text-[11px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-olive-700 text-white">
+              <span className="text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded bg-olive-700 text-white shadow-soft-sm">
                 {badge}
               </span>
             )}
-            <h3 className="font-heading font-bold text-sm sm:text-base text-charcoal-900 truncate max-w-[240px] sm:max-w-md">
+            <h3 className="font-heading font-bold text-sm sm:text-base text-charcoal-900 truncate max-w-[260px] sm:max-w-lg">
               {title || "Product & Manufacturing Inspection"}
             </h3>
           </div>
 
-          <button
-            onClick={onClose}
-            aria-label="Close image viewer"
-            className="p-1.5 rounded-full text-charcoal-600 hover:text-charcoal-950 hover:bg-canvas-muted transition-colors focus:outline-none focus:ring-2 focus:ring-olive-600"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <span className="hidden sm:inline-flex text-[11px] text-charcoal-500 font-medium">
+              Press Esc or click outside to close
+            </span>
+            <button
+              onClick={onClose}
+              aria-label="Close image viewer"
+              className="p-1.5 rounded-full text-charcoal-600 hover:text-charcoal-950 hover:bg-canvas-muted transition-colors focus:outline-none focus:ring-2 focus:ring-olive-600 cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        {/* Image Display Area */}
-        <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[65vh] min-h-[280px] max-h-[620px] bg-[#121612] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
-          {/* Subtle industrial grid pattern */}
-          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#CBD7CB_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+        {/* High-Contrast Light Showroom Display Area */}
+        <div className="relative w-full h-[62vh] min-h-[340px] max-h-[640px] bg-gradient-to-b from-[#FFFFFF] via-[#FAF9F5] to-[#EFECE3] flex items-center justify-center p-4 sm:p-8 overflow-hidden select-none">
+          {/* Subtle Studio Grid Background Pattern */}
+          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(#CBD7CB_1.2px,transparent_1.2px)] [background-size:20px_20px] pointer-events-none" />
 
-          {/* Loading Spinner */}
-          {loading && !error && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-olive-300 z-10">
-              <div className="w-8 h-8 border-2 border-olive-500 border-t-transparent rounded-full animate-spin" />
-              <span className="text-xs font-mono text-charcoal-300">Loading product image...</span>
-            </div>
-          )}
-
-          {/* Error State */}
-          {error ? (
-            <div className="relative z-10 flex flex-col items-center justify-center text-center p-6 text-charcoal-300 gap-2">
-              <AlertCircle className="w-8 h-8 text-amber-500" />
-              <p className="text-sm font-semibold text-white">Unable to display image</p>
-              <p className="text-xs text-charcoal-400">Image source: {imageSrc}</p>
-            </div>
-          ) : (
+          {/* Centered High-Resolution Image */}
+          <div className="relative w-full h-full flex items-center justify-center z-10">
             <img
               src={imageSrc}
-              alt={imageAlt || "Product image"}
-              onLoad={() => setLoading(false)}
-              onError={() => {
-                setLoading(false);
-                setError(true);
-              }}
-              className={`relative z-10 max-w-full max-h-full w-auto h-auto object-contain mx-auto my-auto drop-shadow-2xl transition-opacity duration-200 select-none ${
-                loading ? "opacity-0" : "opacity-100"
-              }`}
+              alt={imageAlt}
+              className="max-h-full max-w-full w-auto h-auto object-contain drop-shadow-2xl transition-transform duration-300 hover:scale-[1.02]"
+              loading="eager"
             />
-          )}
+          </div>
         </div>
 
         {/* Lightbox Footer Details */}
         {description && (
           <div className="px-5 py-3.5 bg-canvas-subtle border-t border-border flex items-start gap-2.5 text-xs sm:text-sm text-charcoal-700">
             <Info className="w-4 h-4 text-olive-700 shrink-0 mt-0.5" />
-            <p className="leading-relaxed line-clamp-2 sm:line-clamp-none">{description}</p>
+            <p className="leading-relaxed">{description}</p>
           </div>
         )}
       </div>

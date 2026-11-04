@@ -35,5 +35,3 @@ next-env.d.ts
 
 .git-bin/
 mingit.zip
-*.zip
-
