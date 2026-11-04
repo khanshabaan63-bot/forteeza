@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, PhoneCall } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -48,26 +47,6 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand Logo & Wordmark */}
-          <Link
-            href="/"
-            className="flex flex-col items-start group focus:outline-none focus:ring-2 focus:ring-olive-600 rounded py-0.5"
-            aria-label="Forteeza Safe & Vaults Company - Home"
-          >
-            <span className="font-heading font-extrabold text-sm sm:text-base md:text-lg tracking-tight text-charcoal-900 uppercase leading-none">
-              Forteeza Safe & Vaults Company
-            </span>
-            <div className="relative h-6 w-24 sm:h-7 sm:w-28 mt-1">
-              <Image
-                src="/images/logo/logo.png"
-                alt="Rakshak Logo - With 50+ years of expertise"
-                fill
-                className="object-contain object-left"
-                priority
-              />
-            </div>
-          </Link>
-
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {siteConfig.navLinks.map((link) => {
@@ -143,20 +122,10 @@ export default function Navbar() {
           >
             <div>
               {/* Header inside drawer */}
-              <div className="flex items-center justify-between pb-5 border-b border-border">
-                <div className="flex flex-col items-start pr-2">
-                  <span className="font-heading font-extrabold text-xs sm:text-sm tracking-tight text-charcoal-900 uppercase leading-tight">
-                    Forteeza Safe & Vaults Company
-                  </span>
-                  <div className="relative h-6 w-24 mt-1">
-                    <Image
-                      src="/images/logo/logo.png"
-                      alt="Rakshak Logo"
-                      fill
-                      className="object-contain object-left"
-                    />
-                  </div>
-                </div>
+              <div className="flex items-center justify-between pb-4 border-b border-border">
+                <span className="font-heading font-bold text-sm tracking-wider uppercase text-charcoal-700">
+                  Navigation
+                </span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-2 text-charcoal-600 hover:text-charcoal-950 rounded-full"
