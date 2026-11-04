@@ -103,9 +103,19 @@ export default function HomePage() {
 
               {/* Main Headline */}
               <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-charcoal-900 tracking-tight leading-[1.1]">
-                Advanced Security. <br />
-                <span className="text-olive-700">Built on Trust.</span>
+                Forteeza Safe & Vaults Company
               </h1>
+
+              {/* Rakshak Logo (Medium Size) */}
+              <div className="relative h-12 w-40 sm:h-14 sm:w-48 mt-4">
+                <Image
+                  src="/images/logo/logo.png"
+                  alt="Rakshak Logo - With 50+ years of expertise"
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
 
               {/* Supporting Headline */}
               <p className="mt-4 font-heading font-semibold text-lg sm:text-xl text-charcoal-800">
